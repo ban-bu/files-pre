@@ -1,32 +1,29 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Case Study1 - 预览与下载</title>
+    <title>Case Study 1 - Preview & Download</title>
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <main class="container">
       <header class="header">
-        <h1>Case Study1</h1>
-        <p class="subtitle">在线预览与下载</p>
+        <h1>Case Study 1</h1>
+        <p class="subtitle">Preview and Download</p>
       </header>
 
       <section class="actions">
-        <a id="downloadLink" class="button primary" href="/files/Case%20Study1.docx" download>下载 Case Study1.docx</a>
-        <a class="button" href="/files/Case%20Study1.docx" target="_blank" rel="noopener">新标签页打开</a>
+        <a id="downloadLink" class="button primary" href="/files/Case%20Study1.docx" download>Download Case Study 1 (.docx)</a>
+        <a class="button" href="/files/Case%20Study1.docx" target="_blank" rel="noopener">Open in New Tab</a>
       </section>
 
       <section class="viewer">
-        <div class="tip">
-          预览使用微软 Office 在线预览服务，部署到公网后可正常加载；若加载失败，请使用上方下载按钮。
-        </div>
-        <iframe id="officeViewer" title="Case Study1 预览" allowfullscreen></iframe>
+        <iframe id="officeViewer" title="Case Study 1 Preview" allowfullscreen></iframe>
       </section>
 
       <footer class="footer">
-        <small>若未看到文档，请确认你已将文件放在 <code>/public/files/Case Study1.docx</code>。</small>
+        <small>© For teaching use</small>
       </footer>
     </main>
 
@@ -38,7 +35,7 @@
         var iframe = document.getElementById('officeViewer');
         iframe.src = officeEmbed;
 
-        // 同步下载链接（万一你改了文件名，可统一在此处修改）
+        // Sync download link if file name changes in one place
         var download = document.getElementById('downloadLink');
         download.href = filePath;
       })();
