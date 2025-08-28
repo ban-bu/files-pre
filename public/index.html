@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Case Study1 - 预览与下载</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>Case Study1</h1>
+        <p class="subtitle">在线预览与下载</p>
+      </header>
+
+      <section class="actions">
+        <a id="downloadLink" class="button primary" href="/files/Case%20Study1.docx" download>下载 Case Study1.docx</a>
+        <a class="button" href="/files/Case%20Study1.docx" target="_blank" rel="noopener">新标签页打开</a>
+      </section>
+
+      <section class="viewer">
+        <div class="tip">
+          预览使用微软 Office 在线预览服务，部署到公网后可正常加载；若加载失败，请使用上方下载按钮。
+        </div>
+        <iframe id="officeViewer" title="Case Study1 预览" allowfullscreen></iframe>
+      </section>
+
+      <footer class="footer">
+        <small>若未看到文档，请确认你已将文件放在 <code>/public/files/Case Study1.docx</code>。</small>
+      </footer>
+    </main>
+
+    <script>
+      (function () {
+        var filePath = '/files/Case%20Study1.docx';
+        var absoluteUrl = window.location.protocol + '//' + window.location.host + filePath;
+        var officeEmbed = 'https://view.officeapps.live.com/op/embed.aspx?src=' + encodeURIComponent(absoluteUrl);
+        var iframe = document.getElementById('officeViewer');
+        iframe.src = officeEmbed;
+
+        // 同步下载链接（万一你改了文件名，可统一在此处修改）
+        var download = document.getElementById('downloadLink');
+        download.href = filePath;
+      })();
+    </script>
+  </body>
+  </html>
+
+
